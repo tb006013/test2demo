@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="lib/ionic/css/ionic.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body ng-controller="myController">
+		<div id="header" class="bar bar-header headertop">
+		  <h1>三斤耗儿鱼</h1>
+		  <span>渝北店，8号桌</span>
+		</div>
+		
+		<div class="main">
+			<ul class="nav">
+				<li ng-class="{true: 'active'}[list.ifChose]" ng-repeat="list in allData" ng-click="changeNav($index)">
+					<a href="" title="">
+						<i class="line" ng-hide="$first"></i>
+						<span class="nav-pic {{list.class}}"></span>
+						{{ list.name }}
+					</a>
+				</li>
+			</ul>
+			<div class="mylist">
+				<ion-content>
+				
+					<h3>{{ dinnerTitle }}</h3>
+					<ul class="dinner-list">
+						<li ng-repeat="item in dinnerList">
+							<div class="dinner-pic">
+								<img ng-src="{{item.pic}}" alt="">
+								<span class="zhuo"><i></i>同桌一点{{item.tongzhuo}}分</span>
+							</div>
+							
+							<h5>{{ item.name }}</h5>
+							<span><i>￥{{item.price}}</i>/{{item.unit}}</span>
+							<span class="del"></span>
+							<span class="add"></span>
+							
+						</li>
+						
+					</ul>	
+				</ion-content>
+			</div>
+		</div>
+		
+		<div class="bar bar-footer footerclo">
+		  <div class="footerleftdiv col col-75">已点{{}}道菜</div>
+		  <button class="button-full fotbtncol col col-25">
+		        <a style="color: #fff;" href="template/checkfood.html">已点菜单</a>
+		  </button>
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/angular.min.js" ></script>
+		<script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js" ></script>
+		<script type="text/javascript" src="js/app.js" ></script>
+		
+	</body>
+</html>

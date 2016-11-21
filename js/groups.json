@@ -1,0 +1,39 @@
+[{
+    "id": 1,
+    "name": "主菜",
+    "class": "zhucai",
+    "ifChose": true,
+    "items": [{
+        "id": 1,
+        "name": "三金耗儿鱼",
+        "price": 318.00,
+        "unit": "锅",
+        "tongzhuo": 3,
+        "pic": "http://dummyimage.com/750x460/ccc/333.jpg"
+    }, {
+        "id": 2,
+        "name": "好大一条鱼",
+        "price": 128.00,
+        "unit": "条",
+        "tongzhuo": 2,
+        "pic": "http://dummyimage.com/750x460/ccc/333.jpg"
+    }]
+},{
+    "id": 2,
+    "name": "热菜",
+    "class": "hot",
+    "ifChose": false,
+    "items": [{
+        "id": 3,
+        "name": "三金耗儿鱼3333",
+        "price": 318.00,
+        "unit": "锅",
+        "pic": "http://dummyimage.com/750x460/ccc/333.jpg"
+    }, {
+        "id": 4,
+        "name": "好大一条鱼33333",
+        "price": 128.00,
+        "unit": "条",
+        "pic": "http://dummyimage.com/750x460/ccc/333.jpg"
+    }]
+}]

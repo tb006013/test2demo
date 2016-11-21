@@ -1,0 +1,293 @@
+/*公共样式*/
+html,
+body,
+div,
+ul,
+li,
+ol,
+img,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+ul li{
+	list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*index页面样式*/
+.headertop {
+	background: #f34336;
+	text-align: center;
+	color: #fff;
+	font-size: 28px;
+	position: relative;
+}
+	.headertop h1 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50px;
+		background: url('../img/logo.png') no-repeat center;
+		text-indent: -9999px;
+	}
+	.headertop span{
+		width: 100%;
+		font-size: 28px;
+		text-align: center;
+		
+	}
+
+
+
+
+.main {
+			width: 100%;
+			position: absolute;
+			top: 44px;
+			left: 0;
+			right: 0;
+			bottom: 44px;
+			background: #fff;
+		}
+			.nav {
+				width: 50px;
+				height: 100%;
+				background: #f4f4f4;
+			}
+				.nav li {
+					text-align: center;
+					margin-bottom: 15px;
+				}
+					.nav li a {
+						color: #3a3a3a;
+						font-size: 16px;
+						display: block;
+					}
+					.nav-pic {
+						display: block;
+						width: 36px;
+						height: 36px;
+						margin: 0 auto 10px;
+						border-radius: 50%;
+					}
+					.zhucai {
+						background: url('../img/zhucai.png') no-repeat center #dbdbdb;
+					}
+					.hot {
+						background: url('../img/hot.png') no-repeat center #dbdbdb;
+					}
+					.line {
+						display: block;
+						width: 2px;
+						height: 44px;
+						background: #dbdbdb;
+						margin: 0 auto;
+					}
+
+				.nav li.active a{
+					color: #f34336;
+				}
+				.nav li.active .zhucai {
+					background: url('../img/zhucai.png') no-repeat center #f34336;
+				}
+				.nav li.active .hot {
+					background: url('../img/hot.png') no-repeat center #f34336;
+				}
+
+
+
+				.nav li:nth-child(1) {
+					padding-top: 46px;
+				}
+
+			.mylist {
+				position: absolute;
+				right: 20px;
+				left: 70px;
+				bottom: 0;
+				top: 0;
+				overflow: hidden;
+				overflow-y: auto;
+			}
+				.mylist h3 {
+					font-size: 24px;
+					color: #727a7f;
+					padding: 20px 0;
+				}
+			.dinner-list img {
+				width: 100%;
+			}
+			.dinner-pic{
+				position: relative;
+			}	
+				.dinner-pic span.zhuo {
+					height: 44px;
+					line-height: 44px;
+					position: absolute;
+					right: 0;
+					bottom: 5px;
+					color: #fff;
+					font-size: 24px;
+					background: rgba(0, 0, 0, .6);
+					padding-left: 12px;
+					padding-right: 14px;
+				}
+					.dinner-pic span.zhuo i {
+						display: block;
+						width: 9px;
+						height: 44px;
+						background: url('../img/left-bac.png') no-repeat;
+						float: left;
+						margin-left: -21px;
+					}
+.del{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 50%;
+	border: 1px solid #f34336;
+	background: url('../img/del.png') no-repeat center #fff;
+}
+.add{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: url('../img/add.png') no-repeat center #f34336;
+}
+
+
+
+.footerclo{
+	background: #3e3a39;
+	color: #fff;
+}
+.fotbtncol{
+	
+	height: 44px;
+	background: #6b615e;
+	border: none;
+	/*color: #fff;*/
+}
+
+
+
+
+/*checkfood页面样式*/
+.checkfooter{
+	background: #3e3a39;
+	color: #fff;
+}
+.checkfoodfooter{
+	background: #f34336;
+	color: #fff;
+	height: 100%;
+}
+.listcontent span{
+	display: inline-block;
+}
+
+
+.tanchuang{
+	z-index: 999;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+}
+.tanchuang div{
+	margin-top: 240px;
+	margin-left: 57px;
+	width: 200px;
+	height: 100px;
+	background: #f0f0f0;
+  border-radius: 4px;
+}
+.tanchuang p:first-child{
+	color: #000000;
+	font-weight: 600;
+	padding: 10px;
+	font-size: 12px;
+}
+.tanchuang button{
+	
+	background: #f0f0f0;
+	border: none;
+	color: #f26e65;
+}
+.tanchuang button a{
+	color: #f26e65;
+}
+.checkfoodcontent{
+	overflow: hidden;
+  overflow-y: auto;
+	position: absolute;
+	top: 44px;
+	bottom: 44px;
+	left: 0;
+	right: 0;
+}
+
+
+
+
+/*continuefood页面样式*/
+.continuefoodbox{
+	width: 100%;
+	height: 100%;
+	background: #f4f4f4;
+	text-align: center;
+	
+}
+.continuefoodbox div{
+	margin-top: 110px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: url('../img/2.png') no-repeat center #fff;
+}
+.continuefoodbtn{
+	width: 128px;
+	height: 40px;
+	background: #f34336;
+	color: #fff;
+	border: none;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 4px;
+	margin-bottom: 223px;
+	margin-top: 10px;
+}

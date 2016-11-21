@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../lib/ionic/css/ionic.min.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+	<body ng-controller="myController">
+
+
+
+
+
+
+		<div id="checkfoodheader" class="bar bar-header bar-light">
+		  <ion-nav-back-button>
+			
+		  </ion-nav-back-button>
+		  <h1>确认订单</h1>
+		</div>
+		
+		<div class="checkfoodcontent">
+		<ion-content>
+			<div class="list" style="margin-bottom: 0;">
+	
+			    <a class="item item-avatar" href="#">
+			      <img src="../img/1.jpg">
+			      <h2>阿国是糖</h2>
+			      
+			    </a>
+			
+			</div>
+			<div class="listcontent">
+				<ul class="list">
+			    <li class="item">
+			       <span>蒙面耗儿鱼</span>
+			       <span>￥238</span>
+			       <span>/锅</span>
+			       <span class="del"></span>
+			       <span>1</span>
+							<span class="add"></span>
+			    </li>
+			    <li class="item">
+			       <span>李子坝梁山鸡</span>
+			       <span>￥238</span>
+			       <span>/锅</span>
+			       <span class="del"></span>
+			       <span>1</span>
+							<span class="add"></span>
+			    </li>
+			</ul>
+			</div>
+			<div class="list" style="margin-bottom: 0;">
+	
+			    <a class="item item-avatar" href="#">
+			      <img src="../img/1.jpg">
+			      <h2>小小小红帽子</h2>
+			      
+			    </a>
+			
+			</div>
+			<div class="listcontent">
+					<ul class="list">
+				    <li class="item">
+				       <span>蒙面耗儿鱼</span>
+				       <span>￥238</span>
+				       <span>/锅</span>
+				       <span class="del"></span>
+				       <span>1</span>
+								<span class="add"></span>
+				    </li>
+				    <li class="item">
+				       <span>李子坝梁山鸡</span>
+				       <span>￥238</span>
+				       <span>/锅</span>
+				       <span class="del" ng-click="reduce($index)" ng-show="item.num"></span>
+				       <span>1</span>
+								<span class="add" ng-click="add($index)"></span>
+				    </li>
+				</ul>
+			</div>
+			<div class="list" style="margin-bottom: 0;">
+	
+			    <a class="item item-avatar" href="#">
+			      <img src="../img/1.jpg">
+			      <h2>阿国是糖</h2>
+			      
+			    </a>
+			
+			</div>
+			<div class="listcontent">
+				<ul class="list">
+			    <li class="item">
+			       <span>蒙面耗儿鱼</span>
+			       <span>￥238</span>
+			       <span>/锅</span>
+			       <span class="del"></span>
+			       <span>1</span>
+							<span class="add"></span>
+			    </li>
+			    <li class="item">
+			       <span>李子坝梁山鸡</span>
+			       <span>￥238</span>
+			       <span>/锅</span>
+			       <span class="del"></span>
+			       <span>1</span>
+							<span class="add"></span>
+			    </li>
+			</ul>
+			</div>
+		</ion-content>
+		</div>
+		
+		<div class="bar bar-footer checkfooter">
+		  <div class="footerleftdiv col col-75">已点{{ totalNum }}道菜</div>
+		  <button class="button button-full col col-25 checkfoodfooter" ng-click="myClick()">
+		          
+		          <a style="color: #fff;" href="continuefood.html">传送厨房</a>
+		  </button>
+		  <!--<input type="button"  />-->
+		</div>
+    
+    
+    <div class="tanchuang" ng-show="isshow">
+    	<div>
+    		<p>确定让厨房开始制作菜品了吗？</p>
+    		<p>
+    			<button ng-click="myDel()">取消</button>
+    			<button ng-click="myYes()">
+    				
+    				<a style="color: #fff;" href="continuefood.html">确定</a>
+    			</button>
+    		</p>
+    	</div>
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="../js/angular.min.js" ></script>
+		<script type="text/javascript" src="../lib/ionic/js/ionic.bundle.min.js" ></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script>
+			angular.module('myApp', [])
+      .controller('myController', ['$scope', function($scope){
+           $scope.totalNum = 0;
+			     var arr = [];
+           
+           $scope.myClick = function(){
+           	   $scope.isshow = true;
+           };
+           $scope.myDel = function(){
+           	   $scope.isshow = false;
+           };
+           $scope.myYes = function(){
+           	   $scope.isshow = false;
+           }
+           
+           
+           $scope.add = function(index){
+							++$scope.list[index].num;
+							++$scope.totalNum;
+							getTotalPrice();
+							var oturn = false;
+							
+							angular.forEach(arr,function(val,key){
+								if(val.name == $scope.list[index].name){
+									++val.num;
+									oturn = true;
+								}
+							});
+			
+							if(!oturn){
+								arr.push($scope.list[index]);
+							};
+							
+							localStorage.dinner = angular.toJson(arr);
+						};
+			
+					$scope.reduce = function(index){
+							--$scope.list[index].num;
+							--$scope.totalNum;
+							getTotalPrice();
+						}
+		      }])
+		</script>
+	</body>
+</html>

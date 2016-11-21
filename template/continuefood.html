@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../lib/ionic/css/ionic.min.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+	<body ng-controller="myController">
+
+
+
+		<div class="continuefoodbox">
+			<div>
+				
+			</div>
+			<p style="color: #999999;">厨房已开始制作，请耐心等候</p>
+			<button class="continuefoodbtn">
+			  继续点菜
+			</button>
+		</div>
+
+
+
+
+
+
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<script type="text/javascript" src="../lib/ionic/js/ionic.bundle.min.js" ></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script>
+			angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+			    $scope.num = 10;
+			}])
+		</script>
+	</body>
+</html>
